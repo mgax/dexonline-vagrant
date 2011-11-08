@@ -8,6 +8,11 @@ Vagrant::Config.run do |config|
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "cookbooks"
     chef.add_recipe "vagrant_main"
+    chef.json = {
+        :mysql => {
+            :server_root_password => ""
+        }
+    }
   end
 
   config.vm.share_folder "dexonline-repo", "/dexonline", "../dexonline"
