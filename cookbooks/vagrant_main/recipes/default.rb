@@ -13,3 +13,10 @@ web_app "dexonline" do
   template "dexonline.conf.erb"
   notifies :reload, resources(:service => "apache2"), :delayed
 end
+
+packages = %w{build-essential libphp-adodb smarty}
+  packages.each do |pkg|
+  apt_package pkg do
+    action :install
+  end
+end
