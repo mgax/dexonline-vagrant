@@ -20,3 +20,8 @@ packages = %w{build-essential libphp-adodb smarty}
     action :install
   end
 end
+
+execute "setup-dexonline" do
+  cwd "/dexonline"
+  command "tools/setup"
+end
