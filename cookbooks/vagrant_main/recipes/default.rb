@@ -25,5 +25,5 @@ end
 execute "setup-dexonline" do
   cwd "/dexonline"
   command "tools/setup"
-  command "mysql -u root -e 'create database if not exists DEX;'"
+  command "mysql -u root -e 'create database if not exists DEX character set utf8;'"
 end
