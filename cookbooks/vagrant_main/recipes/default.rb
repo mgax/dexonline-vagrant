@@ -15,7 +15,8 @@ web_app "dexonline" do
   notifies :reload, resources(:service => "apache2"), :delayed
 end
 
-packages = %w{build-essential smarty php5-mysql php5-cli}
+packages = %w{build-essential smarty php5-mysql php5-cli
+              python-virtualenv python-dev libxml2-dev libxslt1-dev}
   packages.each do |pkg|
   apt_package pkg do
     action :install
