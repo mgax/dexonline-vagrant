@@ -1,12 +1,13 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
 Vagrant::Config.run do |config|
 
   config.vm.box = "lucid32"
 
-  config.vm.network "33.33.33.10"
-  config.vm.boot_mode = :gui
+  config.vm.network :hostonly, "192.168.13.11"
 
   config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = "cookbooks"
     chef.add_recipe "vagrant_main"
     chef.json = {
         :mysql => {
@@ -15,6 +16,6 @@ Vagrant::Config.run do |config|
     }
   end
 
-  config.vm.share_folder "dexonline-repo", "/dexonline", "../dexonline"
+  config.vm.share_folder "dexonline-repo", "/dexonline", "../"
 
 end
