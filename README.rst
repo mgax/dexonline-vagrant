@@ -26,3 +26,13 @@ Instalat configurația pentru DEXonline::
 Pornit și configurat mașina virtuală::
 
     vagrant up
+
+Este configurat un folder shared, repository-ul `DEX` este accesibil ca
+director `/dexonline` în mașina virtuală. Presupunem că înăuntru este un
+director `tmp` care conține un dump de bază de date::
+
+    vagrant ssh
+    zcat /dexonline/tmp/dex-database.sql.gz | mysql DEX -u root
+
+Mașina virtuală ar trebui să fie pornită, cu site-ul în lucru accesibil
+la adresa http://192.168.13.11/.
