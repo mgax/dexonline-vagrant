@@ -20,7 +20,7 @@ Instalat Vagrant și o imagine de bază::
 Instalat configurația pentru DEXonline::
 
     cd path/to/DEX
-    git clone git://github.com/alex-morega/dexonline-vagrant.git vagrant
+    git clone git://github.com/mgax/dexonline-vagrant.git vagrant
     cd vagrant
 
 Pornit și configurat mașina virtuală::
